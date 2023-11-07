@@ -2,3 +2,18 @@ git config --list
 
 git config user.name ""
 git config user.password ""
+
+//检查当前项目状态，红色代表改动了未添加到仓库中取；绿色代表添加到仓库中还未提交
+git status
+
+//在本地声明一个远程仓库
+git remote add origin https://github.com/szj-github/nowcoder-szj.git
+删除这个生民 git remote move origin
+
+git checkout szj
+git pull
+git add *
+git commit -m "" //此时已经提交到自己的远程分支了
+
+//将自己分支提交到主分支
+git push -u origin master
