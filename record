@@ -1,0 +1,4 @@
+git config --list
+
+git config user.name ""
+git config user.password ""
