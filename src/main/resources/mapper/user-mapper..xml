@@ -19,7 +19,7 @@
 
     <select id="selectByName" resultType="User">
         select id,username,password,salt,email,type,status,activation_code,header_url,create_time
-        from user where name = #{name}
+        from user where username = #{username}
     </select>
 
     <select id="selectByEmail" resultType="User">
