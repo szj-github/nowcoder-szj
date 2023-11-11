@@ -13,7 +13,7 @@ git remote add origin https://github.com/szj-github/nowcoder-szj.git
 git checkout szj
 git pull
 git add *
-git commit -m "" //此时已经提交到自己的远程分支了
+git commit -m " " //此时已经提交到自己的远程分支了
 
 //将自己分支提交到主分支，如果采用的http的方式，提交时需要时输入账户密码，密钥方式则不需要
 git push -u origin master
