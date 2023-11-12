@@ -21,8 +21,8 @@ public class CaptchaConfig {
         properties.setProperty("kaptcha.textproducer.font.size","32");
         properties.setProperty("kaptcha.image.color","0,0,0");
 
-        properties.setProperty("kaptcha.textproducer.char.string","1234567890asdfghjklqw");
-        properties.setProperty("kaptcha.textproducer.font.length","4");
+        properties.setProperty("kaptcha.textproducer.char.string","aaaaaa");
+        properties.setProperty("kaptcha.textproducer.char.length","5");
         DefaultKaptcha kaptcha = new DefaultKaptcha();
         Config config = new Config(properties);
         kaptcha.setConfig(config);

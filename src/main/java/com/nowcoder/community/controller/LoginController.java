@@ -84,6 +84,7 @@ public class LoginController implements CommunityConstant {
         }
     }
 
+    /*邮箱激活*/
     @GetMapping("/activation/{userId}/{code}")
     public String activation(Model model, @PathVariable("userId") int userId,@PathVariable("code") String code){
         int result = userService.activation(userId,code);
@@ -105,7 +106,7 @@ public class LoginController implements CommunityConstant {
                         Model model,HttpSession session,HttpServletResponse response){
         //判断验证码正确
         String kaptcha = (String) session.getAttribute("kaptcha");
-        if(StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || kaptcha.equals(code)){
+        if(StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !kaptcha.equals(code)){
             model.addAttribute("codeMsg","验证码错误");
             return "/site/login";
         }
