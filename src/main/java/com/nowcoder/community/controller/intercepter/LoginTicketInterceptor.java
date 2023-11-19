@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
-
+/*用于将请求用户放到threadlocal中，以便后续多次拿到user信息*/
 @Component
 public class LoginTicketInterceptor implements HandlerInterceptor {
     @Autowired
