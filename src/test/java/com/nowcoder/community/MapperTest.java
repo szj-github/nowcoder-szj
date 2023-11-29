@@ -23,8 +23,8 @@ public class MapperTest {
     private LoginTicketMapper loginTicketMapper;
     @Test
     public void testSelectUser(){
-        User user = userMapper.selectById(12);
-        System.out.println(user);
+        User user = userMapper.selectByName("xxx");
+        System.out.println("user"+user);
     }
 
     @Test

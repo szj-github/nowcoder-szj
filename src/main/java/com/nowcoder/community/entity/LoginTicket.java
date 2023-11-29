@@ -8,7 +8,7 @@ import java.util.Date;
 public class LoginTicket {
     private int id;
     private int userId;
-    private String ticket;
-    private int status;
-    private Date expired;//到期日期
+    private String ticket;  //登录凭证 唯一标识符
+    private int status;     //有效？
+    private Date expired;//凭证到期日期
 }

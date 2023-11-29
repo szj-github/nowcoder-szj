@@ -5,7 +5,7 @@
 <mapper namespace="com.nowcoder.community.dao.CommentMapper">
 
 <sql id="selectFields" >
-    id,from_id,to_id,conversation_id,content,status,create_time
+    id,user_id,entity_type,entity_id,target_id,content,status,create_time
 </sql>
 
 <sql id="insertFields">
@@ -18,4 +18,22 @@
     limit #{offset},#{limit}
 </select>
 
+    <select id="selectCountByEntity" resultType="int">
+        select count(id) from comment
+        where entity_type=#{entityType} and entity_id = #{entityId} and status=0
+    </select>
+
+    <!--int insertComment(Comment comment);-->
+    <insert id="insertComment" parameterType="Comment" keyProperty="id">
+        insert into comment (<include refid="insertFields"></include>)
+        values (#{userId},#{entityType},#{entityId},#{targetId},#{content},#{status},#{createTime})
+    </insert>
+
+    <!--Comment selectCommentById(int id);-->
+    <select id="selectCommentById" resultType="Comment">
+        select
+        <include refid="selectFields"></include>
+        from comment
+        where id = #{id};
+    </select>
 </mapper>
